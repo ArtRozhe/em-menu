@@ -1,4 +1,4 @@
-(function (global) {
+(function () {
     document.addEventListener('DOMContentLoaded', function() {
         var parentItems = document.querySelectorAll('.em-menu__parent'),
             subMenuArr = document.querySelectorAll('.em-submenu'),
@@ -59,11 +59,9 @@
             if (parent && parent.nodeName) {
                 switch (parent.nodeName) {
                     case 'SPAN':
-                        //subMenu = parent.parentElement.parentElement.childNodes[1];
                         subMenu = parent.parentElement.parentElement.querySelector('.em-submenu');
                         break;
                     case 'A':
-                        //subMenu = parent.parentElement.childNodes[1];
                         subMenu = parent.parentElement.querySelector('.em-submenu');
                         break;
                     case 'DIV':
@@ -123,4 +121,4 @@
             parentItems[i].addEventListener('click', toggleDropdownHandler);
         }
     });
-})(this)
+})();
